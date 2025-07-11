@@ -27,10 +27,30 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen  justify-center  antialiased`}
       >
-        {children}
+        <div className="w-[375px] max-w-full items-center overflow-hidden rounded-xl border border-zinc-700 shadow-lg">
+          {children}
+        </div>
       </body>
     </html>
-  );
+  )
 }
+
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode
+// }>) {
+//   return (
+//     <html lang="en" className="dark">
+//       <body
+//         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen items-center justify-center bg-zinc-900 text-white antialiased`}
+//       >
+//         <div className="w-[375px] max-w-full overflow-hidden rounded-xl border border-zinc-700 shadow-lg">
+//           {children}
+//         </div>
+//       </body>
+//     </html>
+//   )
+// }
