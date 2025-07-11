@@ -1,15 +1,14 @@
-import { SearchIcon } from "lucide-react";
-import Header from "./_components/header";
-import { Button } from "./_components/ui/button";
-import { Input } from "./_components/ui/input";
-import Image from "next/image";
-import { Card, CardContent } from "./_components/ui/card";
-import { db } from "./_lib/prisma";
-import BarberShopItem from "./_components/barbershop-items";
-import { quickSearchOptions } from "./_constants/search";
-import BookingItem from "./_components/bookingItem";
+import { SearchIcon } from "lucide-react"
+import Header from "./_components/header"
+import { Button } from "./_components/ui/button"
+import { Input } from "./_components/ui/input"
+import Image from "next/image"
+import { db } from "./_lib/prisma"
+import BarberShopItem from "./_components/barbershop-items"
+import { quickSearchOptions } from "./_constants/search"
+import BookingItem from "./_components/bookingItem"
 
-const Home = async() => {
+const Home = async () => {
   const barbershops = await db.barbershop.findMany({})
   const popularBarbershops = await db.barbershop.findMany({
     orderBy: {
@@ -53,7 +52,7 @@ const Home = async() => {
           />
         </div>
 
-       <BookingItem/>
+        <BookingItem />
 
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
           recomendados
@@ -73,15 +72,6 @@ const Home = async() => {
           ))}
         </div>
       </div>
-      <footer>
-        <Card className="rounded-none">
-          <CardContent className="px-5 py-6">
-            <p className="text-sm text-gray-400">
-              © 2025 Copyright <span className="font-bold">FSW Barber</span>
-            </p>
-          </CardContent>
-        </Card>
-      </footer>
     </div>
   )
 }
